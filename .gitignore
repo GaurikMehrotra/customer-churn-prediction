@@ -20,3 +20,6 @@ reports/*.json
 # Trained model artifacts
 models/
 
+
+# Generated JSON reports
+reports/*.json

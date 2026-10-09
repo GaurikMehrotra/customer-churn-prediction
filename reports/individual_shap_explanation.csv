@@ -1,0 +1,46 @@
+feature,transformed_value,shap_value,absolute_shap
+numeric__tenure,-1.2816237461508113,0.2557143877194406,0.2557143877194406
+categorical__InternetService_Fiber optic,1.0,0.06552758830894219,0.06552758830894219
+numeric__SeniorCitizen,2.2636062032690805,0.054544426674437874,0.054544426674437874
+categorical__StreamingTV_No,0.0,0.045094786084268826,0.045094786084268826
+categorical__Contract_Month-to-month,1.0,0.03767633994594881,0.03767633994594881
+categorical__PaperlessBilling_No,0.0,0.02658504343976004,0.02658504343976004
+categorical__StreamingMovies_No internet service,0.0,0.026233041258476055,0.026233041258476055
+categorical__OnlineBackup_No,1.0,0.022664114128641326,0.022664114128641326
+categorical__PaymentMethod_Mailed check,0.0,0.013055148230464154,0.013055148230464154
+categorical__TechSupport_Yes,0.0,0.009102865173604369,0.009102865173604369
+numeric__MonthlyCharges,1.0011484313303363,0.0,0.0
+numeric__TotalCharges,-0.9671929580031219,0.0,0.0
+categorical__gender_Female,0.0,0.0,0.0
+categorical__MultipleLines_No,0.0,0.0,0.0
+categorical__PhoneService_Yes,1.0,0.0,0.0
+categorical__PhoneService_No,0.0,0.0,0.0
+categorical__Dependents_Yes,0.0,0.0,0.0
+categorical__Dependents_No,1.0,0.0,0.0
+categorical__Partner_Yes,1.0,0.0,0.0
+categorical__Partner_No,0.0,0.0,0.0
+categorical__gender_Male,1.0,0.0,0.0
+categorical__OnlineSecurity_Yes,0.0,0.0,0.0
+categorical__OnlineBackup_No internet service,0.0,0.0,0.0
+categorical__MultipleLines_Yes,1.0,0.0,0.0
+categorical__MultipleLines_No phone service,0.0,0.0,0.0
+categorical__InternetService_No,0.0,0.0,0.0
+categorical__OnlineSecurity_No,1.0,0.0,0.0
+categorical__OnlineSecurity_No internet service,0.0,0.0,0.0
+categorical__InternetService_DSL,0.0,0.0,0.0
+categorical__TechSupport_No internet service,0.0,0.0,0.0
+categorical__TechSupport_No,1.0,0.0,0.0
+categorical__DeviceProtection_Yes,0.0,0.0,0.0
+categorical__DeviceProtection_No internet service,0.0,0.0,0.0
+categorical__DeviceProtection_No,1.0,0.0,0.0
+categorical__OnlineBackup_Yes,0.0,0.0,0.0
+categorical__StreamingTV_Yes,1.0,0.0,0.0
+categorical__StreamingTV_No internet service,0.0,0.0,0.0
+categorical__StreamingMovies_Yes,1.0,0.0,0.0
+categorical__StreamingMovies_No,0.0,0.0,0.0
+categorical__Contract_Two year,0.0,0.0,0.0
+categorical__Contract_One year,0.0,0.0,0.0
+categorical__PaperlessBilling_Yes,1.0,0.0,0.0
+categorical__PaymentMethod_Bank transfer (automatic),0.0,0.0,0.0
+categorical__PaymentMethod_Credit card (automatic),0.0,0.0,0.0
+categorical__PaymentMethod_Electronic check,1.0,0.0,0.0

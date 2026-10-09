@@ -1,0 +1,3 @@
+model,best_cv_pr_auc,best_params
+Logistic Regression,0.6616561497949907,"{""model__C"": 1.0, ""model__class_weight"": null}"
+Random Forest,0.6580202966451911,"{""model__class_weight"": null, ""model__max_depth"": 12, ""model__min_samples_leaf"": 5, ""model__n_estimators"": 200}"
