@@ -6,11 +6,16 @@ venv/
 __pycache__/
 *.py[cod]
 
-# Development tool caches
+# Development and test caches
 .ruff_cache/
 .pytest_cache/
+.coverage
+htmlcov/
 
-# Local datasets
+# Jupyter notebook checkpoints
+.ipynb_checkpoints/
+
+# Local datasets and generated splits
 data/raw/
 data/processed/
 
@@ -19,7 +24,3 @@ reports/*.json
 
 # Trained model artifacts
 models/
-
-
-# Generated JSON reports
-reports/*.json

@@ -1,5 +1,7 @@
+.PHONY: setup lint test quality pipeline validate
 
-.PHONY: lint test quality pipeline
+setup:
+	python -m pip install -r requirements.txt
 
 lint:
 	ruff check src scripts tests
@@ -11,3 +13,7 @@ quality: lint test
 
 pipeline:
 	python -m scripts.run_pipeline
+
+validate:
+	$(MAKE) quality
+	$(MAKE) pipeline
