@@ -16,3 +16,7 @@ data/processed/
 
 # Generated reports
 reports/*.json
+
+# Trained model artifacts
+models/
+
