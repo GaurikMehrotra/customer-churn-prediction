@@ -1,6 +1,6 @@
 # Customer Churn Prediction
 
-An end-to-end machine learning project that predicts customer churn using the IBM Telco Customer Churn dataset. This project covers data cleaning, exploratory data analysis, leakage-safe preprocessing, model comparison, hyperparameter tuning, threshold optimization, explainability, and automated testing.
+An end-to-end machine learning project that predicts customer churn using the IBM Telco Customer Churn dataset. This project covers data cleaning, exploratory data analysis, leakage-safe preprocessing, model comparison, hyperparameter tuning, threshold optimization, SHAP explainability, automated testing, and a reusable prediction interface.
 
 ## Problem Statement
 
@@ -44,7 +44,7 @@ These are assumed relative costs, not measured financial savings. The 0.15 thres
 3. **Leakage-safe preprocessing:** Impute missing values, scale numeric features where appropriate, and one-hot encode categorical features. Exclude customer IDs from model inputs.
 4. **Data splitting:** Use a stratified train/test split with a fixed random seed.
 5. **Baseline modeling:** Establish a Logistic Regression baseline using stratified cross-validation.
-6. **Model comparison:** Compare Logistic Regression, Random Forest, and Decision Tree models.
+6. **Model comparison:** Compare a Dummy baseline, Logistic Regression, Decision Tree, Random Forest, Extra Trees, and K-Nearest Neighbors.
 7. **Class imbalance experiments:** Investigate class weighting to improve churn recall.
 8. **Hyperparameter tuning:** Use cross-validation and average precision to select model parameters.
 9. **Threshold analysis:** Compare thresholds using an explicit cost assumption.
@@ -69,7 +69,7 @@ Feature importance describes model behavior; it does not establish causation.
 - **Explainability:** SHAP
 - **Visualization:** Matplotlib, Seaborn
 - **Testing and code quality:** pytest, Ruff
-- **Automation:** GitHub Actions
+- **Automation:** Make, GitHub Actions
 
 ## Repository Structure
 
@@ -97,7 +97,7 @@ Create and activate a Python virtual environment, then install the dependencies:
 python -m venv .venv
 source .venv/bin/activate
 python -m pip install --upgrade pip
-pip install -r requirements.txt
+make setup
 ```
 
 Place the IBM Telco Customer Churn CSV at:
