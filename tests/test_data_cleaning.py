@@ -53,3 +53,18 @@ def test_blank_total_charges_for_nonzero_tenure_is_rejected():
 
     with pytest.raises(ValueError, match="Blank TotalCharges"):
         clean_telco_data(data)
+
+
+def test_invalid_churn_label_is_rejected():
+    data = sample_data()
+    data.loc[0, "Churn"] = "Maybe"
+
+    with pytest.raises(ValueError):
+        clean_telco_data(data)
+
+
+def test_missing_required_column_is_rejected():
+    data = sample_data().drop(columns=["Churn"])
+
+    with pytest.raises(ValueError):
+        clean_telco_data(data)

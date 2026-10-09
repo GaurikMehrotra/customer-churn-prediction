@@ -82,3 +82,22 @@ def test_customer_id_is_rejected(sample_customers):
 def test_non_dataframe_input_is_rejected():
     with pytest.raises(TypeError, match="pandas DataFrame"):
         predict_churn([{"tenure": 12}])
+
+
+@pytest.mark.parametrize(
+    ("threshold", "expected_label"),
+    [(0.0, 1), (1.0, 0)],
+)
+def test_threshold_boundaries(sample_customers, threshold, expected_label):
+    results = predict_churn(sample_customers, threshold=threshold)
+
+    assert results["predicted_churn"].eq(expected_label).all()
+
+
+def test_missing_model_file_is_rejected(tmp_path):
+    from src.predict import load_model
+
+    missing_path = tmp_path / "missing_model.joblib"
+
+    with pytest.raises(FileNotFoundError, match="Saved model not found"):
+        load_model(missing_path)

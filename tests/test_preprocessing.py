@@ -62,3 +62,12 @@ def test_preprocessor_handles_unseen_categories():
     assert transformed.shape[0] == 1
     assert transformed.shape[1] == preprocessor.transform(train).shape[1]
     assert not np.isnan(transformed).any()
+
+
+def test_preprocessor_rejects_identifier_only_features():
+    import pytest
+
+    data = pd.DataFrame({"customerID": ["A001", "A002"]})
+
+    with pytest.raises(ValueError, match="identifier"):
+        build_preprocessor(data)
