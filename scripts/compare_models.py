@@ -1,9 +1,10 @@
-"""Compare baseline classifiers using stratified cross-validation."""
+"""Compare six classifiers using leakage-safe stratified cross-validation."""
 
 from pathlib import Path
 
 import pandas as pd
-from sklearn.ensemble import RandomForestClassifier
+from sklearn.dummy import DummyClassifier
+from sklearn.ensemble import ExtraTreesClassifier, RandomForestClassifier
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import (
     average_precision_score,
@@ -13,20 +14,25 @@ from sklearn.metrics import (
     roc_auc_score,
 )
 from sklearn.model_selection import StratifiedKFold, cross_val_predict
+from sklearn.neighbors import KNeighborsClassifier
 from sklearn.pipeline import Pipeline
 from sklearn.tree import DecisionTreeClassifier
 
 from src.preprocessing import build_preprocessor
 
 DATA_DIR = Path("data/processed/splits")
+OUTPUT_PATH = Path("reports/model_comparison.csv")
 RANDOM_STATE = 42
 N_SPLITS = 5
 
 
 def main() -> None:
-    """Compare models using out-of-fold training predictions."""
+    """Compare models with out-of-fold probabilities on training data."""
     X_train = pd.read_csv(DATA_DIR / "X_train.csv")
     y_train = pd.read_csv(DATA_DIR / "y_train.csv")["Churn"]
+
+    if set(y_train.unique()) != {0, 1}:
+        raise ValueError("Training target must contain both classes.")
 
     cv = StratifiedKFold(
         n_splits=N_SPLITS,
@@ -35,6 +41,7 @@ def main() -> None:
     )
 
     models = {
+        "Dummy (prior)": DummyClassifier(strategy="prior"),
         "Logistic Regression": LogisticRegression(
             max_iter=2000,
             random_state=RANDOM_STATE,
@@ -48,6 +55,17 @@ def main() -> None:
             n_estimators=150,
             min_samples_leaf=5,
             random_state=RANDOM_STATE,
+            n_jobs=2,
+        ),
+        "Extra Trees": ExtraTreesClassifier(
+            n_estimators=150,
+            min_samples_leaf=5,
+            random_state=RANDOM_STATE,
+            n_jobs=2,
+        ),
+        "K-Nearest Neighbors": KNeighborsClassifier(
+            n_neighbors=15,
+            weights="distance",
             n_jobs=2,
         ),
     }
@@ -86,9 +104,7 @@ def main() -> None:
                 "recall": recall_score(
                     y_train, predictions, zero_division=0
                 ),
-                "f1": f1_score(
-                    y_train, predictions, zero_division=0
-                ),
+                "f1": f1_score(y_train, predictions, zero_division=0),
             }
         )
 
@@ -99,10 +115,9 @@ def main() -> None:
     print("\nMODEL COMPARISON — 5-FOLD OUT-OF-FOLD RESULTS")
     print(results_df.round(4).to_string(index=False))
 
-    output_path = Path("reports/model_comparison.csv")
-    output_path.parent.mkdir(parents=True, exist_ok=True)
-    results_df.to_csv(output_path, index=False)
-    print(f"\nResults saved to {output_path}")
+    OUTPUT_PATH.parent.mkdir(parents=True, exist_ok=True)
+    results_df.to_csv(OUTPUT_PATH, index=False)
+    print(f"\nResults saved to {OUTPUT_PATH}")
 
 
 if __name__ == "__main__":
