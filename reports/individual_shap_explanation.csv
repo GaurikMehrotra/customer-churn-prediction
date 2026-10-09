@@ -1,46 +1,46 @@
 feature,transformed_value,shap_value,absolute_shap
-numeric__tenure,-1.2816237461508113,0.2557143877194406,0.2557143877194406
-categorical__InternetService_Fiber optic,1.0,0.06552758830894219,0.06552758830894219
-numeric__SeniorCitizen,2.2636062032690805,0.054544426674437874,0.054544426674437874
-categorical__StreamingTV_No,0.0,0.045094786084268826,0.045094786084268826
-categorical__Contract_Month-to-month,1.0,0.03767633994594881,0.03767633994594881
-categorical__PaperlessBilling_No,0.0,0.02658504343976004,0.02658504343976004
-categorical__StreamingMovies_No internet service,0.0,0.026233041258476055,0.026233041258476055
-categorical__OnlineBackup_No,1.0,0.022664114128641326,0.022664114128641326
-categorical__PaymentMethod_Mailed check,0.0,0.013055148230464154,0.013055148230464154
-categorical__TechSupport_Yes,0.0,0.009102865173604369,0.009102865173604369
-numeric__MonthlyCharges,1.0011484313303363,0.0,0.0
-numeric__TotalCharges,-0.9671929580031219,0.0,0.0
-categorical__gender_Female,0.0,0.0,0.0
-categorical__MultipleLines_No,0.0,0.0,0.0
-categorical__PhoneService_Yes,1.0,0.0,0.0
-categorical__PhoneService_No,0.0,0.0,0.0
-categorical__Dependents_Yes,0.0,0.0,0.0
-categorical__Dependents_No,1.0,0.0,0.0
-categorical__Partner_Yes,1.0,0.0,0.0
-categorical__Partner_No,0.0,0.0,0.0
-categorical__gender_Male,1.0,0.0,0.0
-categorical__OnlineSecurity_Yes,0.0,0.0,0.0
-categorical__OnlineBackup_No internet service,0.0,0.0,0.0
-categorical__MultipleLines_Yes,1.0,0.0,0.0
-categorical__MultipleLines_No phone service,0.0,0.0,0.0
-categorical__InternetService_No,0.0,0.0,0.0
-categorical__OnlineSecurity_No,1.0,0.0,0.0
-categorical__OnlineSecurity_No internet service,0.0,0.0,0.0
-categorical__InternetService_DSL,0.0,0.0,0.0
-categorical__TechSupport_No internet service,0.0,0.0,0.0
-categorical__TechSupport_No,1.0,0.0,0.0
-categorical__DeviceProtection_Yes,0.0,0.0,0.0
-categorical__DeviceProtection_No internet service,0.0,0.0,0.0
-categorical__DeviceProtection_No,1.0,0.0,0.0
-categorical__OnlineBackup_Yes,0.0,0.0,0.0
-categorical__StreamingTV_Yes,1.0,0.0,0.0
-categorical__StreamingTV_No internet service,0.0,0.0,0.0
-categorical__StreamingMovies_Yes,1.0,0.0,0.0
-categorical__StreamingMovies_No,0.0,0.0,0.0
-categorical__Contract_Two year,0.0,0.0,0.0
-categorical__Contract_One year,0.0,0.0,0.0
-categorical__PaperlessBilling_Yes,1.0,0.0,0.0
-categorical__PaymentMethod_Bank transfer (automatic),0.0,0.0,0.0
-categorical__PaymentMethod_Credit card (automatic),0.0,0.0,0.0
-categorical__PaymentMethod_Electronic check,1.0,0.0,0.0
+numeric__tenure,-1.2816237461508113,1.5264575685207662,1.5264575685207662
+numeric__TotalCharges,-0.9671929580031219,-0.5279221016948146,0.5279221016948146
+numeric__MonthlyCharges,1.0011484313303363,-0.5204629687453353,0.5204629687453353
+categorical__InternetService_Fiber optic,1.0,0.31709771129457504,0.31709771129457504
+categorical__Contract_Month-to-month,1.0,0.2448107922537548,0.2448107922537548
+categorical__InternetService_DSL,0.0,0.22702598341991126,0.22702598341991126
+categorical__Contract_Two year,0.0,0.13978683318936516,0.13978683318936516
+categorical__PaymentMethod_Electronic check,1.0,0.1246564623019221,0.1246564623019221
+categorical__MultipleLines_No,0.0,0.11734549032751736,0.11734549032751736
+categorical__StreamingMovies_Yes,1.0,0.11654376929922611,0.11654376929922611
+categorical__StreamingTV_Yes,1.0,0.1162792205839512,0.1162792205839512
+numeric__SeniorCitizen,2.2636062032690805,0.1041123350738884,0.1041123350738884
+categorical__PaperlessBilling_No,0.0,0.0961034790560755,0.0961034790560755
+categorical__StreamingMovies_No,0.0,0.09261674436774756,0.09261674436774756
+categorical__StreamingTV_No,0.0,0.092420613423664,0.092420613423664
+categorical__Partner_No,0.0,0.09040936243701952,0.09040936243701952
+categorical__gender_Female,0.0,0.0891107763213577,0.0891107763213577
+categorical__Partner_Yes,1.0,-0.07944994821038767,0.07944994821038767
+categorical__gender_Male,1.0,-0.07760299153628472,0.07760299153628472
+categorical__OnlineSecurity_No,1.0,0.07188830599741272,0.07188830599741272
+categorical__Dependents_Yes,0.0,0.06980670400266514,0.06980670400266514
+categorical__TechSupport_No,1.0,0.06049158206308537,0.06049158206308537
+categorical__MultipleLines_Yes,1.0,0.059649852217454724,0.059649852217454724
+categorical__OnlineSecurity_Yes,0.0,0.0529260428259275,0.0529260428259275
+categorical__TechSupport_Yes,0.0,0.045245641913664085,0.045245641913664085
+categorical__InternetService_No,0.0,0.045015605197770425,0.045015605197770425
+categorical__StreamingTV_No internet service,0.0,0.045015605197770425,0.045015605197770425
+categorical__StreamingMovies_No internet service,0.0,0.045015605197770425,0.045015605197770425
+categorical__OnlineSecurity_No internet service,0.0,0.045015605197770425,0.045015605197770425
+categorical__OnlineBackup_No internet service,0.0,0.045015605197770425,0.045015605197770425
+categorical__TechSupport_No internet service,0.0,0.045015605197770425,0.045015605197770425
+categorical__DeviceProtection_No internet service,0.0,0.045015605197770425,0.045015605197770425
+categorical__PaymentMethod_Bank transfer (automatic),0.0,0.04281132074102565,0.04281132074102565
+categorical__PaymentMethod_Credit card (automatic),0.0,0.04070747990542148,0.04070747990542148
+categorical__Contract_One year,0.0,0.0290024639897721,0.0290024639897721
+categorical__PhoneService_Yes,1.0,-0.02621177415748856,0.02621177415748856
+categorical__PaymentMethod_Mailed check,0.0,0.023527477697213382,0.023527477697213382
+categorical__DeviceProtection_No,1.0,-0.022224031714790572,0.022224031714790572
+categorical__PhoneService_No,0.0,0.020971367689012806,0.020971367689012806
+categorical__MultipleLines_No phone service,0.0,0.020971367689012806,0.020971367689012806
+categorical__OnlineBackup_Yes,0.0,0.017245720265419078,0.017245720265419078
+categorical__OnlineBackup_No,1.0,0.01706181243698468,0.01706181243698468
+categorical__Dependents_No,1.0,-0.01197740853127189,0.01197740853127189
+categorical__DeviceProtection_Yes,0.0,-0.01011199349384126,0.01011199349384126
+categorical__PaperlessBilling_Yes,1.0,0.008028280942606835,0.008028280942606835
