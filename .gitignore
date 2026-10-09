@@ -1,0 +1,18 @@
+# Python virtual environments
+.venv/
+venv/
+
+# Python cache files
+__pycache__/
+*.py[cod]
+
+# Development tool caches
+.ruff_cache/
+.pytest_cache/
+
+# Local datasets
+data/raw/
+data/processed/
+
+# Generated reports
+reports/*.json
