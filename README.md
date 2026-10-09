@@ -108,28 +108,34 @@ Dataset source: [IBM Telco Customer Churn dataset](https://raw.githubusercontent
 
 ## Run the Pipeline
 
-Run these commands from the repository root, in order:
+Run the complete workflow from the repository root:
 
 ```bash
-python scripts/clean_data.py \
-  --input data/raw/telco_churn.csv \
-  --output data/processed/telco_churn_clean.csv \
-  --report reports/data_quality.json
-
-python scripts/split_data.py
-python scripts/test_preprocessing.py
-python scripts/train_baseline.py
-python scripts/analyze_thresholds.py
-python scripts/compare_models.py
-python scripts/compare_class_weights.py
-python scripts/tune_models.py
-python scripts/evaluate_final.py
-python scripts/evaluate_business_threshold.py
-python scripts/explain_model.py
-python scripts/explain_customer.py
+make pipeline
 ```
 
-The commands are listed in workflow order. The cleaning step must run before the remaining scripts. Generated datasets, model artifacts, and JSON reports are excluded from version control; selected CSV summaries and the SHAP plot are committed.
+Run quality checks and then the full pipeline:
+
+```bash
+make validate
+```
+
+Place the raw dataset at `data/raw/telco_churn.csv` before running the pipeline. The workflow cleans data, prepares train/test splits, compares and tunes models, evaluates thresholds, and generates explainability outputs.
+
+## Using the Prediction Interface
+
+The reusable `predict_churn` function loads the trained Logistic Regression pipeline and returns a churn probability and binary prediction for each customer.
+
+```python
+import pandas as pd
+from src.predict import predict_churn
+
+customers = pd.read_csv("data/processed/splits/X_test.csv").head(5)
+results = predict_churn(customers, threshold=0.50)
+print(results)
+```
+
+The default threshold is `0.50`. Lower thresholds can identify more potential churners but also produce more false positives. Choose an operational threshold using validated business costs.
 
 ## Tests and Code Quality
 
